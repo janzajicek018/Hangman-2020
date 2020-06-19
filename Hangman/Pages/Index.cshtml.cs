@@ -16,10 +16,15 @@ namespace Hangman.Pages
         {
             _logger = logger;
         }
+        public bool Click { get; set; }
 
         public void OnGet()
         {
-
+            Click = false;
+        }
+        public void OnPost()
+        {
+            Click = true;
         }
     }
 }

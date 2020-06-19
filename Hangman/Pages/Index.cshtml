@@ -4,7 +4,42 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@if (Model.Click == false)
+{
+    <div class="text-center">
+        <div>
+            <img src="~/img/HM-complete.svg" alt="Complete HangMan">
+        </div>
+        <h1>HANGMAN</h1>
+        <p>Zvládneš přežít <a>5</a> kol, nebo se budeš houpat na šibenici ?</p>
+        <h2>Máš <a>8</a> životů...</h2>
+        <form method="post">
+            <input type="hidden" asp-for="Click" value="@Model.Click" />
+            <button class="btn btn-primary" type="submit">Klikni zde</button>
+        </form>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <div>
+            <h1>TVŮJ OBĚŠENEC</h1>
+            <img src="~/img/HM-all.svg" alt="all HangMan">
+        </div>
+        <div class="text">
+            <h1>KATEGORIE SLOV</h1>
+            <form method="post">
+                <button class="btn btn-primary">SPORT</button>
+            </form>
+            <form method="post">
+                <button class="btn btn-primary">KULTURA</button>
+            </form>
+            <form method="post">
+                <button class="btn btn-primary">HUDBA</button>
+            </form>
+            <form method="post">
+                <button class="btn btn-primary">FILMY</button>
+            </form>
+        </div>
+    </div>
+}
