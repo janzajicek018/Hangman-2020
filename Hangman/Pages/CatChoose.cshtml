@@ -1,0 +1,19 @@
+﻿@page
+@model Hangman.Pages.CatChooseModel
+@{
+    ViewData["Title"] = "CatChoose";
+}
+   
+<div class="text-center">
+    <div>
+        <h1>TVŮJ OBĚŠENEC</h1>
+        <img src="~/img/HM-all.svg" alt="all HangMan">
+    </div>
+    <div class="text">
+        <h1>KATEGORIE SLOV</h1>
+        <form method="post">
+            <input type="hidden" asp-for="Category.Cat" value="@Hangman.Model.CategoryChoice.Sport" />
+            <button class="btn btn-primary" type="submit" asp-page="/GamePage">Sport</button>
+        </form>
+    </div>
+</div>

@@ -6,20 +6,24 @@ using Hangman.Model;
 using Hangman.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 
 namespace Hangman.Pages
 {
-    public class IndexModel : PageModel
+    public class CatChooseModel : PageModel
     {
+        readonly SessionStorage _ss;
+        public CatChooseModel(SessionStorage ss)
+        {
+            _ss = ss;
+        }
+        public Category Category { get; set; }
         public void OnGet()
         {
-        }
-        public void OnGetClick()
-        {
+            Category = new Category();
         }
         public void OnPost()
         {
+            _ss.SaveTest(Category);
         }
     }
 }

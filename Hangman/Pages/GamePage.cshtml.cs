@@ -6,20 +6,21 @@ using Hangman.Model;
 using Hangman.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 
 namespace Hangman.Pages
 {
-    public class IndexModel : PageModel
+    public class GamePageModel : PageModel
     {
+        private readonly WordLogic _wl;
+
+        public GamePageModel(WordLogic wl)
+        {
+            _wl = wl;
+        }
+        public Category Category { get; set; }
         public void OnGet()
         {
-        }
-        public void OnGetClick()
-        {
-        }
-        public void OnPost()
-        {
+            Category = _wl.Category;
         }
     }
 }
