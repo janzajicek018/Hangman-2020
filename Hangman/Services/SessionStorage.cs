@@ -11,20 +11,26 @@ namespace Hangman.Services
     public class SessionStorage
     {
         public ISession _session;
-        const string test = "TEST";
+        const string CATKEY = "CATEGORY";
+        const string CHOICEKEY = "CHOICE";
 
         public Category Category { get; set; }
+        public CategoryChoice Choice { get; set; }
 
         public SessionStorage(IHttpContextAccessor hce)
         {
             _session = hce.HttpContext.Session;
-            Category = _session.Get<Category>(test);
+            Choice = _session.Get<CategoryChoice>(CHOICEKEY);
+            Category = _session.Get<Category>(CATKEY);
         }
 
-        public void SaveTest(Category cat)
+        public void SaveCategory(Category cat)
         {
-            _session.Set(test, cat);
+            _session.Set(CATKEY, cat);
         }
-
+        public void SaveCatChoice(CategoryChoice choice)
+        {
+            _session.Set(CHOICEKEY, choice);
+        }
     }
 }

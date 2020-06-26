@@ -29,6 +29,7 @@ namespace Hangman
             services.AddDistributedMemoryCache();
             services.AddSession();
 
+            services.AddSingleton<CategoriesContainer>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<WordLogic>();
             services.AddTransient<SessionStorage>();

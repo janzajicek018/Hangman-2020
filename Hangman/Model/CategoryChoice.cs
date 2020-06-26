@@ -7,9 +7,10 @@ namespace Hangman.Model
 {
     public enum CategoryChoice
     {
-        Sport = 0,
-        Culture = 1,
-        Music = 2,
-        Movies = 3
+        Default = 0,
+        Sport = 1,
+        Culture = 2,
+        Music = 3,
+        Movies = 4
     }
 }

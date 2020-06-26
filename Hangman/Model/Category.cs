@@ -7,6 +7,8 @@ namespace Hangman.Model
 {
     public class Category
     {
-        public CategoryChoice Cat { get; set; }
+        public string Name { get; set; }
+        public CategoryChoice CatName { get; set; }
+        public List<Word> Words { get; set; }
     }
 }

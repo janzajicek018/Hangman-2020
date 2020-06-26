@@ -12,8 +12,20 @@
     <div class="text">
         <h1>KATEGORIE SLOV</h1>
         <form method="post">
-            <input type="hidden" asp-for="Category.Cat" value="@Hangman.Model.CategoryChoice.Sport" />
-            <button class="btn btn-primary" type="submit" asp-page="/GamePage">Sport</button>
+            <input class="btn btn-primary" type="submit" asp-for="Choice" value="@Hangman.Model.CategoryChoice.Sport" />
         </form>
+        <form method="post">
+            <input class="btn btn-primary" type="submit" asp-for="Choice" value="@Hangman.Model.CategoryChoice.Culture" />
+        </form>
+        <form method="post">
+            <input class="btn btn-primary" type="submit" asp-for="Choice" value="@Hangman.Model.CategoryChoice.Music" />
+        </form>
+        <form method="post">
+            <input class="btn btn-primary" type="submit" asp-for="Choice" value="@Hangman.Model.CategoryChoice.Movies" />
+        </form>
+        @if(Model.Choice != Hangman.Model.CategoryChoice.Default)
+        {
+            <a href="/Hangman" class="btn btn-success">yes</a>
+        }
     </div>
 </div>

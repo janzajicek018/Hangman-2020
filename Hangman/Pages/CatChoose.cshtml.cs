@@ -16,14 +16,14 @@ namespace Hangman.Pages
         {
             _ss = ss;
         }
-        public Category Category { get; set; }
+        [BindProperty]
+        public CategoryChoice Choice { get; set; }
         public void OnGet()
         {
-            Category = new Category();
         }
         public void OnPost()
         {
-            _ss.SaveTest(Category);
+            _ss.SaveCatChoice(Choice);
         }
     }
 }

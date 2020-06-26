@@ -9,12 +9,15 @@ namespace Hangman.Services
     public class WordLogic
     {
         readonly SessionStorage _session;
+        readonly CategoriesContainer _cc;
         public Category Category { get; set; }
 
-        public WordLogic(SessionStorage ss)
+        public WordLogic(SessionStorage ss, CategoriesContainer cc)
         {
             _session = ss;
-            Category = _session.Category;
+            _cc = cc;
+            Category = _cc.Categories[_session.Choice];
+
         }
     }
 }

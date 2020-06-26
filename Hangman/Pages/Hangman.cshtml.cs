@@ -6,14 +6,16 @@ using Hangman.Model;
 using Hangman.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
+
 
 namespace Hangman.Pages
 {
-    public class GamePageModel : PageModel
+    public class HangmanModel : PageModel
     {
-        private readonly WordLogic _wl;
+        readonly WordLogic _wl;
 
-        public GamePageModel(WordLogic wl)
+        public HangmanModel(WordLogic wl)
         {
             _wl = wl;
         }
