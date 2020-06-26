@@ -11,21 +11,19 @@
     </div>
     <div class="text">
         <h1>KATEGORIE SLOV</h1>
-        <form method="post">
-            <input class="btn btn-primary" type="submit" asp-for="Choice" value="@Hangman.Model.CategoryChoice.Sport" />
-        </form>
-        <form method="post">
-            <input class="btn btn-primary" type="submit" asp-for="Choice" value="@Hangman.Model.CategoryChoice.Culture" />
-        </form>
-        <form method="post">
-            <input class="btn btn-primary" type="submit" asp-for="Choice" value="@Hangman.Model.CategoryChoice.Music" />
-        </form>
-        <form method="post">
-            <input class="btn btn-primary" type="submit" asp-for="Choice" value="@Hangman.Model.CategoryChoice.Movies" />
-        </form>
-        @if(Model.Choice != Hangman.Model.CategoryChoice.Default)
+        @foreach (var item in Model.Categories)
         {
-            <a href="/Hangman" class="btn btn-success">yes</a>
+            <form method="post">
+                <input class="btn btn-primary" type="submit" asp-for="Choice" value="@item.Key" />
+            </form>
         }
     </div>
+        @if(Model.Choice != Hangman.Model.CategoryChoice.Default)
+        {
+            <div>
+                <p>"@Model.Choice" are you sure?</p>
+                <a href="/Hangman" class="btn btn-success">Yes</a>
+                <a href="/CatChoose" class="btn btn-success">No</a>
+            </div>
+        }
 </div>

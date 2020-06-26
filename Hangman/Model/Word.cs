@@ -10,11 +10,11 @@ namespace Hangman.Model
         public Word(string name)
         {
             Name = name;
-            Letters = Name.Split();
+            Letters = Name.ToCharArray();
         }
 
         public string Name { get; set; }
-        public string[] Letters { get; set; }
+        public char[] Letters { get; set; }
 
     }
 }

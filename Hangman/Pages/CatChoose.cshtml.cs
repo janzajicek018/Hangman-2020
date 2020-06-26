@@ -12,12 +12,16 @@ namespace Hangman.Pages
     public class CatChooseModel : PageModel
     {
         readonly SessionStorage _ss;
-        public CatChooseModel(SessionStorage ss)
+        readonly CategoriesContainer _cc;
+        public CatChooseModel(SessionStorage ss, CategoriesContainer cc)
         {
             _ss = ss;
+            _cc = cc;
+            Categories = _cc.Categories;
         }
         [BindProperty]
         public CategoryChoice Choice { get; set; }
+        public Dictionary<CategoryChoice, Category> Categories { get; set; }
         public void OnGet()
         {
         }

@@ -13,16 +13,29 @@ namespace Hangman.Pages
 {
     public class HangmanModel : PageModel
     {
-        readonly WordLogic _wl;
+        readonly GuessLogic _gl;
+        readonly SessionStorage _ss;
 
-        public HangmanModel(WordLogic wl)
+        public char[] GuessingLetters { get; set; }
+        public string Letter { get; set; }
+        public Word CurrentWord { get; set; }
+        public HangmanModel(GuessLogic gl, SessionStorage ss)
         {
-            _wl = wl;
+            _gl = gl;
+            _ss = ss;
         }
-        public Category Category { get; set; }
         public void OnGet()
         {
-            Category = _wl.Category;
+            GuessingLetters = _gl.GuessingLetters;
+            CurrentWord = _gl.CurrentWord;
+        }
+        public void OnGetGuess()
+        {
+        }
+        public void OnPost()
+        {
+            Console.WriteLine(Letter);
+            _gl.GuessWord(Letter);
         }
     }
 }

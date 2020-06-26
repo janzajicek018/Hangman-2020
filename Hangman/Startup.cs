@@ -30,8 +30,10 @@ namespace Hangman
             services.AddSession();
 
             services.AddSingleton<CategoriesContainer>();
+            services.AddSingleton<Random>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<WordLogic>();
+            services.AddScoped<GuessLogic>();
             services.AddTransient<SessionStorage>();
 
 

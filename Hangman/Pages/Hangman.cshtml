@@ -3,5 +3,10 @@
 @{
     ViewData["Title"] = "Hangman";
 }
-
-    <p>@Model.Category.Words[0].Name</p>
+    
+    <div class="text-center">
+        <form method="post">
+            <input type="text" asp-for="Letter" value="@Model.Letter"/>
+            <button class="btn btn-primary">Enter</button>
+        </form>
+    </div>

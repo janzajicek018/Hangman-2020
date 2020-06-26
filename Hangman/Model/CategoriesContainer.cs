@@ -14,7 +14,7 @@ namespace Hangman.Model
             Categories.Add(CategoryChoice.Sport, new Category() {
                 Name = "Sport",
                 CatName = CategoryChoice.Sport,
-                Words = new List<Word> { new Word("Football") }
+                Words = new List<Word> { new Word("Football"), new Word("Baseball"), new Word("Golf") }
             });
             Categories.Add(CategoryChoice.Culture, new Category() {
                 Name = "Sport",
