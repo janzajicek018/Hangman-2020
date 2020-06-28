@@ -5,8 +5,34 @@
 }
     
     <div class="text-center">
+        @switch (Model.Lives)
+        {
+            case 6:
+                <img src="Img/HM-7life.svg" alt="7life">
+                break;
+            case 5:
+                <img src="Img/HM-6life.svg" alt="6life">
+                break;
+            case 4:
+                <img src="Img/HM-5life.svg" alt="5life">
+                break;
+            case 3:
+                <img src="Img/HM-4life.svg" alt="4life">
+                break;
+            case 2:
+                <img src="Img/HM-3life.svg" alt="3life">
+                break;
+            case 1:
+                <img src="Img/HM-2life.svg" alt="2life">
+                break;
+            default:
+                <img src="Img/HM-1life.svg" alt="1life">
+                break;
+        }
         <form method="post">
-            <input type="text" asp-for="Letter" value="@Model.Letter"/>
-            <button class="btn btn-primary">Enter</button>
+            <input type="text" asp-for="Letter" value="" />
+            <button class="btn btn-primary" type="submit">Enter</button>
         </form>
+        <p>@Model.Word </p>
     </div>
+

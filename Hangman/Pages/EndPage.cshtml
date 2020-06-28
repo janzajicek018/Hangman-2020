@@ -1,0 +1,27 @@
+﻿@page
+@model Hangman.Pages.EndPageModel
+@{
+    ViewData["Title"] = "EndPage";
+}
+
+@if (Model.VictoryCondition == 1)
+{
+    <div class="text-center">
+        <h1>HANGMAN</h1>
+        <p>Dobrá práce <a>PŘEŽIL JSI</a></p>
+        <img src="img/HM-all-win.svg" alt="Loose HangMan">
+        <h1>KONEC HRY</h1>
+        <a class="btn btn-primary" href="/Index">Restartovat</a>
+    </div>
+}
+else
+{
+    <div class="text-center">
+
+        <h1>HANGMAN</h1>
+        <p>Byl jsi <a>OBĚŠEN</a></p>
+        <img src="img/HM-all-loose.svg" alt="Loose HangMan">
+        <h1>KONEC HRY</h1>
+        <a class="btn btn-primary" href="/Index">Restartovat</a>
+    </div>
+}
